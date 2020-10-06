@@ -17,6 +17,10 @@
 		E01CDEB125282CEA005C0616 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CDEB025282CEA005C0616 /* MainBuilder.swift */; };
 		E01CDEB92528304A005C0616 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CDEB82528304A005C0616 /* MainInteractor.swift */; };
 		E01CDEC6252832D0005C0616 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CDEC5252832D0005C0616 /* MainRouter.swift */; };
+		E01CDF0C2528D497005C0616 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CDF0B2528D497005C0616 /* NextViewController.swift */; };
+		E01CDF142528D545005C0616 /* NextInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CDF132528D545005C0616 /* NextInteractor.swift */; };
+		E01CDF192528DCBF005C0616 /* NextRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CDF182528DCBF005C0616 /* NextRouter.swift */; };
+		E01CDF1E2528DDD7005C0616 /* NextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CDF1D2528DDD7005C0616 /* NextBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		E01CDEB025282CEA005C0616 /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		E01CDEB82528304A005C0616 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		E01CDEC5252832D0005C0616 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		E01CDF0B2528D497005C0616 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		E01CDF132528D545005C0616 /* NextInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextInteractor.swift; sourceTree = "<group>"; };
+		E01CDF182528DCBF005C0616 /* NextRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextRouter.swift; sourceTree = "<group>"; };
+		E01CDF1D2528DDD7005C0616 /* NextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				E01CDEAF25282CBA005C0616 /* MainRIB */,
+				E01CDF0A2528D44C005C0616 /* NextRIB */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -185,6 +194,17 @@
 				E01CDEB025282CEA005C0616 /* MainBuilder.swift */,
 			);
 			path = MainRIB;
+			sourceTree = "<group>";
+		};
+		E01CDF0A2528D44C005C0616 /* NextRIB */ = {
+			isa = PBXGroup;
+			children = (
+				E01CDF0B2528D497005C0616 /* NextViewController.swift */,
+				E01CDF132528D545005C0616 /* NextInteractor.swift */,
+				E01CDF182528DCBF005C0616 /* NextRouter.swift */,
+				E01CDF1D2528DDD7005C0616 /* NextBuilder.swift */,
+			);
+			path = NextRIB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,9 +382,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E01CDE24252825ED005C0616 /* MainViewController.swift in Sources */,
+				E01CDF0C2528D497005C0616 /* NextViewController.swift in Sources */,
+				E01CDF1E2528DDD7005C0616 /* NextBuilder.swift in Sources */,
 				E01CDE20252825ED005C0616 /* AppDelegate.swift in Sources */,
+				E01CDF192528DCBF005C0616 /* NextRouter.swift in Sources */,
 				E01CDEB125282CEA005C0616 /* MainBuilder.swift in Sources */,
 				E01CDEB92528304A005C0616 /* MainInteractor.swift in Sources */,
+				E01CDF142528D545005C0616 /* NextInteractor.swift in Sources */,
 				E01CDEC6252832D0005C0616 /* MainRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

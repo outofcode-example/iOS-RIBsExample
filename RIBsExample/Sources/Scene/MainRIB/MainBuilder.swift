@@ -10,16 +10,10 @@ import RIBs
 
 // MARK: - Component
 
-protocol MainDependency: Dependency {
-    var buttonText: String { get }
-}
+protocol MainDependency: Dependency {}
 
-final class MainComponent: MainDependency {
-    var buttonText: String { "Hello, RIBs\nClick Button!" }
-}
-
-final class MainComponentTest: MainDependency {
-    var buttonText: String { "Test" }
+final class MainComponent: Component<MainDependency>, NextDependency {
+    var title: String = ""
 }
 
 // MARK: - Builder
@@ -29,18 +23,17 @@ protocol MainBuilable: Buildable {
 }
 
 final class MainBuilder: Builder<MainDependency>, MainBuilable {
-    
-    init() {
-        super.init(dependency: MainComponent())
-    }
-    
-    func build() -> LaunchRouting {
-        let viewController = MainViewController()
 
-        let interactor = MainInteractor(buttonText: dependency.buttonText,
+    func build() -> LaunchRouting {
+        let component = MainComponent(dependency: dependency)
+        let viewController = MainViewController()
+        let interactor = MainInteractor(title: "Hello, RIBs\nClick Button!",
                                         presenter: viewController)
         
-        return MainRouter(interactor: interactor,
+        let nextBuilder = NextBuilder(dependency: component)
+        
+        return MainRouter(nextBuilder: nextBuilder,
+                          interactor: interactor,
                           viewController: viewController)
     }
 }

@@ -30,6 +30,7 @@ protocol MainPresentable: Presentable {
 
 protocol MainViewControllable: ViewControllable {
     func present(_ viewController: ViewControllable, animated: Bool)
+    func dismiss(_ viewController: ViewControllable, animated: Bool)
 }
 
 // MARK: - ViewController
@@ -39,7 +40,8 @@ final class MainViewController: UIViewController, MainPresentable {
     // MARK: - UI Components
     
     private lazy var button: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
+        button.setTitleColor(.gray, for: .normal)
         button.titleLabel?.numberOfLines = 0
         button.titleLabel?.textAlignment = .center
         return button
@@ -86,6 +88,11 @@ extension MainViewController: MainPresentableAction {
 
 extension MainViewController: MainViewControllable {
     func present(_ viewController: ViewControllable, animated: Bool) {
-        print("present need")
+        present(viewController.uiviewController, animated: animated)
+    }
+    
+    func dismiss(_ viewController: ViewControllable, animated: Bool) {
+        guard !viewController.uiviewController.isBeingDismissed else { return }
+        viewController.uiviewController.dismiss(animated: animated)
     }
 }
